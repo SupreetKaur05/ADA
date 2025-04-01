@@ -148,5 +148,26 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
 9. Run the selection process with the example activities.
 
 
+# binary search
+1.  **Start the Search:** Begin searching within a sorted array, given a target value (x), and the starting (low) and ending (high) indices of the search area.
+2.  **Repeat Until Search Area is Empty:** Keep repeating the following steps as long as the "low" index is less than or equal to the "high" index.
+3.  **Find the Middle:** Calculate the middle index of the current search area.
+4.  **Check if Found:**
+    * If the target value (x) is equal to the value at the middle index, you've found it! Return the middle index.
+5.  **Adjust Search Area (Target is Greater):**
+    * If the target value (x) is greater than the value at the middle index, the target must be in the right half of the search area. Update the "low" index to be one position to the right of the middle index.
+6.  **Adjust Search Area (Target is Smaller):**
+    * If the target value (x) is smaller than the value at the middle index, the target must be in the left half of the search area. Update the "high" index to be one position to the left of the middle index.
+7.  **Not Found:** If the loop finishes without finding the target value, return -1 to indicate that it's not in the array.
+8.  **Main Function Setup:**
+    * Create a sorted array of numbers.
+    * Define the target number to search for.
+    * Calculate the size of the array.
+    * Call the binary search function with the array, target, and the initial search range (from index 0 to the last index).
+    * Check the return value from the search.
+    * If the result is -1, print "Not found".
+    * Otherwise, print "Element is found at index" followed by the returned index.
+
+
 
 
