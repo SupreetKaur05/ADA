@@ -131,4 +131,22 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
 
 
 
+# ACTIVITY SELECTION
+1. Create a special queue that sorts activities by their finish times (earliest finish first).
+2. Put all the activities into this queue, but sort them by their end times.
+3. Print a message saying which activities will be selected.
+4. Take the activity with the earliest finish time from the queue.
+5. Print the start and end times of this first activity.
+6. Remove this first activity from the queue.
+7. While there are still activities in the queue:
+    a. Take the next activity with the earliest finish time.
+    b. If this activity doesn't overlap with the previous one (its start time is after or equal to the previous end time):
+        i. Print the start and end times of this activity.
+        ii. Remember the end time of this activity for the next comparison.
+    c. Remove this activity from the queue.
+8. Set up a list of example activities.
+9. Run the selection process with the example activities.
+
+
+
 
