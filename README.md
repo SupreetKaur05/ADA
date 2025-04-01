@@ -222,3 +222,37 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
     c. Print the element at z[i][j] followed by a space.
 9. End the program.
 
+# quickHull
+1. Define a 'Point' structure with integer x and y coordinates.
+
+2. Define a function 'findSide' that determines which side of a line segment (defined by points 'a' and 'b') a point 'p' lies on.
+    a. Calculate a value based on the coordinates of 'a', 'b', and 'p'.
+    b. Return 1 if 'p' is on the left, -1 if on the right, and 0 if collinear.
+
+3. Define a function 'lineDist' that calculates a value proportional to the distance between a point 'p' and a line segment 'a'-'b'.
+    a. Calculate the absolute value of a similar calculation to 'findSide'.
+    b. Return the calculated distance.
+
+4. Define a recursive function 'quickHull' that finds the points on the convex hull.
+    a. Find the point with the maximum distance from the line segment 'a'-'b' on the given side.
+    b. If no such point is found:
+        i. Check if 'a' and 'b' are already in the hull.
+        ii. Add 'a' and 'b' to the hull if they are not already present.
+        iii. Return.
+    c. Recursively call 'quickHull' for the two line segments formed by the maximum distance point and 'a', and the maximum distance point and 'b'.
+
+5. Define a function 'computeConvexHull' that finds the convex hull of a set of points.
+    a. Find the leftmost and rightmost points in the input set.
+    b. Call 'quickHull' twice, once for each side of the line segment connecting the leftmost and rightmost points.
+
+6. In the 'main' function:
+    a. Create an array of 'Point' structures with sample point data.
+    b. Calculate the number of points.
+    c. If the number of points is less than 3, print an error message and exit.
+    d. Allocate memory for the convex hull points.
+    e. Initialize the hull size to 0.
+    f. Call 'computeConvexHull' to find the convex hull.
+    g. Print the points that are part of the convex hull.
+    h. Return 0 to indicate successful execution.
+
+
