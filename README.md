@@ -168,6 +168,39 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
     * If the result is -1, print "Not found".
     * Otherwise, print "Element is found at index" followed by the returned index.
 
+# knap sack
+1. Sort the items by their profit in descending order, then calculate the maximum profit that can be obtained within the given capacity.
+    a. Sort the profit array from highest to lowest, also reordering the weight array to match.
+    b. Print the sorted profit and weight arrays.
+    c. Calculate the maximum profit by adding items or fractions of items until the capacity is full.
+    d. Print the maximum profit found.
+
+2. Sort the items by their weight in ascending order, then calculate the maximum profit.
+    a. Sort the weight array from lowest to highest, also reordering the profit array to match.
+    b. Print the sorted profit and weight arrays.
+    c. Calculate the maximum profit by adding items or fractions of items until the capacity is full.
+    d. Print the maximum profit found.
+
+3. Sort the items by their profit-to-weight ratio in descending order, then calculate the maximum profit.
+    a. Calculate the profit-to-weight ratio for each item.
+    b. Sort the items based on their ratios (highest to lowest), also reordering profit and weight arrays.
+    c. Print the sorted ratios, profit, and weight arrays.
+    d. Calculate the maximum profit by adding items or fractions of items until the capacity is full.
+    e. Print the maximum profit found.
+
+4. Call all three sorting and profit calculation methods (profit, weight, ratio).
+
+5. Generate random weights and profits for a given number of items.
+    a. Ask the user for the number of items and the capacity of the knapsack.
+    b. Generate random weights and profits for each item.
+    c. Print the generated weights and profits.
+
+6. Time the execution of the knapsack function.
+    a. Record the start time.
+    b. Run the knapsack function.
+    c. Record the end time.
+    d. Calculate and print the execution time.
+
 
 
 
