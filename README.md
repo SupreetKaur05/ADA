@@ -202,5 +202,23 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
     d. Calculate and print the execution time.
 
 
-
+# Matix multiplication
+1. Declare three 2x2 integer matrices: z (for the result), x (first input), and y (second input).
+2. Declare integer variables i and j for loop counters, and m1 through m7 for intermediate calculations.
+3. Initialize the input matrices x and y with specific values.
+4. Print the first matrix (x) to the console.
+    a. Loop through each row (i).
+    b. Loop through each column (j) within the row.
+    c. Print the element at x[i][j] followed by a space.
+5. Print the second matrix (y) to the console.
+    a. Loop through each row (i).
+    b. Loop through each column (j) within the row.
+    c. Print the element at y[i][j] followed by a space.
+6. Calculate the seven intermediate values (m1 through m7) using the Strassen's algorithm formulas.
+7. Calculate the elements of the result matrix z using the intermediate values (m1 through m7).
+8. Print the product matrix (z) to the console, which is the result of the Strassen's matrix multiplication.
+    a. Loop through each row (i).
+    b. Loop through each column (j) within the row.
+    c. Print the element at z[i][j] followed by a space.
+9. End the program.
 
