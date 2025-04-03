@@ -121,11 +121,11 @@ OUTPUT:
 ![Quicksort](https://github.com/user-attachments/assets/7f1754e6-442c-495a-b76e-6f6889aadfce)   
 
 
-TIME COMPLEXITY =   
+TIME COMPLEXITY =     
 Best Case: (Ω(n log n)), Occurs when the pivot element divides the array into two equal halves.   
 Average Case (θ(n log n)), On average, the pivot divides the array into two parts, but not necessarily equal.   
-Worst Case: (O(n²)), Occurs when the smallest or largest element is always chosen as the pivot (e.g., sorted arrays).   
-SPACE COMPLEXITY= O(n), due to recursive call stack    
+Worst Case: (O(n²)), Occurs when the smallest or largest element is always chosen as the pivot (e.g., sorted arrays).    
+SPACE COMPLEXITY= O(n), due to recursive call stack      
 
 
 
@@ -163,10 +163,10 @@ Working:
     a. Record the start time.
     b. Run the knapsack function.
     c. Record the end time.
-    d. Calculate and print the execution time.
+    d. Calculate and print the execution time.   
    
-Time Complexity: O(nlogn)
-Space Complexity: O(n)
+Time Complexity: O(nlogn)   
+Space Complexity: O(n)   
 
 
 ### 7-02-25
@@ -190,10 +190,10 @@ Working:
     * Call the binary search function with the array, target, and the initial search range (from index 0 to the last index).
     * Check the return value from the search.
     * If the result is -1, print "Not found".
-    * Otherwise, print "Element is found at index" followed by the returned index.
+    * Otherwise, print "Element is found at index" followed by the returned index.          
 
-Time Complexity: O(log n)
-Space Complexity: O(1) (iterative) or O(log n) (recursive)
+Time Complexity: O(log n)        
+Space Complexity: O(1) (iterative) or O(log n) (recursive)    
 
 
 
@@ -451,11 +451,11 @@ Working:
 
 4. The final value dp[source] will give the minimum number of stages required to reach the sink from the source.
 
-5. If dp[source] is still infinity (or a very large value), it means there is no valid path from the source to the sink.
+5. If dp[source] is still infinity (or a very large value), it means there is no valid path from the source to the sink.            
 
 
-Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges.
-Space Complexity: O(V + E)
+Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges.           
+Space Complexity: O(V + E)            
 
 
 ### 21-03-25
