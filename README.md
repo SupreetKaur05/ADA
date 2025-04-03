@@ -1,6 +1,5 @@
 # ADA
 ### 24-01-25
-## LAB=1
 ## Practical 1
 AIM = Peaks in 1D   
 WORKING :    
@@ -130,45 +129,10 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
 
 
 
-
-# ACTIVITY SELECTION
-1. Create a special queue that sorts activities by their finish times (earliest finish first).
-2. Put all the activities into this queue, but sort them by their end times.
-3. Print a message saying which activities will be selected.
-4. Take the activity with the earliest finish time from the queue.
-5. Print the start and end times of this first activity.
-6. Remove this first activity from the queue.
-7. While there are still activities in the queue:
-    a. Take the next activity with the earliest finish time.
-    b. If this activity doesn't overlap with the previous one (its start time is after or equal to the previous end time):
-        i. Print the start and end times of this activity.
-        ii. Remember the end time of this activity for the next comparison.
-    c. Remove this activity from the queue.
-8. Set up a list of example activities.
-9. Run the selection process with the example activities.
-
-
-# binary search
-1.  **Start the Search:** Begin searching within a sorted array, given a target value (x), and the starting (low) and ending (high) indices of the search area.
-2.  **Repeat Until Search Area is Empty:** Keep repeating the following steps as long as the "low" index is less than or equal to the "high" index.
-3.  **Find the Middle:** Calculate the middle index of the current search area.
-4.  **Check if Found:**
-    * If the target value (x) is equal to the value at the middle index, you've found it! Return the middle index.
-5.  **Adjust Search Area (Target is Greater):**
-    * If the target value (x) is greater than the value at the middle index, the target must be in the right half of the search area. Update the "low" index to be one position to the right of the middle index.
-6.  **Adjust Search Area (Target is Smaller):**
-    * If the target value (x) is smaller than the value at the middle index, the target must be in the left half of the search area. Update the "high" index to be one position to the left of the middle index.
-7.  **Not Found:** If the loop finishes without finding the target value, return -1 to indicate that it's not in the array.
-8.  **Main Function Setup:**
-    * Create a sorted array of numbers.
-    * Define the target number to search for.
-    * Calculate the size of the array.
-    * Call the binary search function with the array, target, and the initial search range (from index 0 to the last index).
-    * Check the return value from the search.
-    * If the result is -1, print "Not found".
-    * Otherwise, print "Element is found at index" followed by the returned index.
-
-# knap sack
+### 7-02-25
+## Practical 6
+Aim: Fractional Knapsack
+Working:
 1. Sort the items by their profit in descending order, then calculate the maximum profit that can be obtained within the given capacity.
     a. Sort the profit array from highest to lowest, also reordering the weight array to match.
     b. Print the sorted profit and weight arrays.
@@ -200,9 +164,65 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
     b. Run the knapsack function.
     c. Record the end time.
     d. Calculate and print the execution time.
+   
+Time Complexity: O(nlogn)
+Space Complexity: O(n)
 
 
-# Matix multiplication
+### 7-02-25
+## Practical 7
+Aim: Binary search
+Working:
+1.  **Start the Search:** Begin searching within a sorted array, given a target value (x), and the starting (low) and ending (high) indices of the search area.
+2.  **Repeat Until Search Area is Empty:** Keep repeating the following steps as long as the "low" index is less than or equal to the "high" index.
+3.  **Find the Middle:** Calculate the middle index of the current search area.
+4.  **Check if Found:**
+    * If the target value (x) is equal to the value at the middle index, you've found it! Return the middle index.
+5.  **Adjust Search Area (Target is Greater):**
+    * If the target value (x) is greater than the value at the middle index, the target must be in the right half of the search area. Update the "low" index to be one position to the right of the middle index.
+6.  **Adjust Search Area (Target is Smaller):**
+    * If the target value (x) is smaller than the value at the middle index, the target must be in the left half of the search area. Update the "high" index to be one position to the left of the middle index.
+7.  **Not Found:** If the loop finishes without finding the target value, return -1 to indicate that it's not in the array.
+8.  **Main Function Setup:**
+    * Create a sorted array of numbers.
+    * Define the target number to search for.
+    * Calculate the size of the array.
+    * Call the binary search function with the array, target, and the initial search range (from index 0 to the last index).
+    * Check the return value from the search.
+    * If the result is -1, print "Not found".
+    * Otherwise, print "Element is found at index" followed by the returned index.
+
+Time Complexity: O(log n)
+Space Complexity: O(1) (iterative) or O(log n) (recursive)
+
+
+
+### 14-02-25
+## Practical 8
+Aim: Activity Selection
+Working:
+1. Create a special queue that sorts activities by their finish times (earliest finish first).
+2. Put all the activities into this queue, but sort them by their end times.
+3. Print a message saying which activities will be selected.
+4. Take the activity with the earliest finish time from the queue.
+5. Print the start and end times of this first activity.
+6. Remove this first activity from the queue.
+7. While there are still activities in the queue:
+    a. Take the next activity with the earliest finish time.
+    b. If this activity doesn't overlap with the previous one (its start time is after or equal to the previous end time):
+        i. Print the start and end times of this activity.
+        ii. Remember the end time of this activity for the next comparison.
+    c. Remove this activity from the queue.
+8. Set up a list of example activities.
+9. Run the selection process with the example activities.
+
+
+
+
+### 14-02-25
+## Practical 9
+Aim: Matix multiplication
+Working:
 1. Declare three 2x2 integer matrices: z (for the result), x (first input), and y (second input).
 2. Declare integer variables i and j for loop counters, and m1 through m7 for intermediate calculations.
 3. Initialize the input matrices x and y with specific values.
@@ -222,7 +242,13 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
     c. Print the element at z[i][j] followed by a space.
 9. End the program.
 
-# quickHull
+
+
+
+### 14-02-25
+## Practical 10
+Aim: Quick hull
+Working:
 1. Define a 'Point' structure with integer x and y coordinates.
 
 2. Define a function 'findSide' that determines which side of a line segment (defined by points 'a' and 'b') a point 'p' lies on.
@@ -256,9 +282,10 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
     h. Return 0 to indicate successful execution.
 
 
-# dijkstra 
-AIM: implement dijkstra algorithm 
-Working
+### 21-02-25
+## Practical 11
+Aim: Dijkstra Algorithm
+Working:
 1. Set the distance to the source node as 0 and all other nodes as infinity.
    Mark all nodes as unprocessed.   
 2. From the unprocessed nodes, select the node with the smallest tentative distance.
@@ -266,13 +293,14 @@ Working
 3. For the selected node, update the distances to its neighboring nodes.
    If the new calculated distance is smaller than the current distance, update it.  
 4. Once the distances to all adjacent nodes of the current node are updated, mark the current node as processed (it is now part of the shortest path).
-
 6. Repeat the process until all nodes are processed.  
-
 7. The final distance values for each node represent the shortest distance from the source node to that node.  
 
 
-# strassens matrix multiplication
+### 21-02-25
+## Practical 12
+Aim: Strassens matrix multiplication
+Working:
 1. Divide the input matrices A and B into four submatrices each:
    A = [[A11, A12], [A21, A22]]
    B = [[B11, B12], [B21, B22]]
@@ -297,10 +325,12 @@ Working
 
 5. If the matrix size is small enough (base case), perform normal matrix multiplication instead of recursion.
 
-6. The time complexity of Strassen’s algorithm is O(n^log2(7)), which is approximately O(n^2.81), making it faster than the standard matrix multiplication algorithm which is O(n^3).
 
-# kruskal's algorithm
 
+### 28-02-25
+## Practical 13
+Aim: Kruskal's algorithm
+Working:
 1. Sort all the edges in the graph by their weight in non-decreasing order.
 
 2. Initialize a disjoint-set (also called union-find) data structure to keep track of connected components.
@@ -313,9 +343,11 @@ Working
 
 5. The resulting set of edges forms the Minimum Spanning Tree (MST) of the graph.
 
-6. The time complexity of Kruskal's algorithm is O(E log E), where E is the number of edges in the graph.
 
-# Prim's algorithm
+### 28-02-25
+## Practical 14
+Aim: Prim's algorithm
+Working:
 1. Initialize a set to keep track of the vertices included in the MST.
 
 2. Initialize the key values of all vertices as infinity, except the starting vertex which is set to 0.
@@ -335,9 +367,10 @@ Working
 
 8. The time complexity of Prim's algorithm is O(E log V) when using a priority queue, where E is the number of edges and V is the number of vertices.
 
-
-# Knapsack
-
+### 7-03-25
+## Practical 15
+Aim:  Knapsack 01
+Working:
 1. Initialize a 2D array (dp) where dp[i][j] represents the maximum value that can be obtained with the first 'i' items and a weight limit of 'j'.
 
 2. Set the base cases:
@@ -356,7 +389,10 @@ Working
 5. The time complexity of this solution is O(n * W), where n is the number of items and W is the weight capacity of the knapsack.
 
 
-# countstages
+ ### 21-03-25
+## Practical 16
+Aim:  countstages
+Working:
 
 1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'. 
    Set dp[sink] = 0 as no stages are required to reach the sink from itself.
@@ -373,8 +409,11 @@ Working
 
 6. The time complexity of this approach is O(n^2), where n is the number of nodes in the graph (since we are checking all possible edges).
 
-# multistage graph
 
+### 21-03-25
+## Practical 17
+Aim:  Multistage graph(forward approach)
+Working:
 1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'.
    Set dp[source] = 0 because no stages are needed to reach the source itself.
 
@@ -391,8 +430,10 @@ Working
 6. The time complexity of this approach is O(n^2), where n is the number of nodes in the graph (since we are checking all possible edges).
 
 
-# Multistage graph backward
-
+### 21-03-25   
+## Practical 18   
+Aim:  Multistage graph(backward approach)             
+Working:
 1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'.
    Set dp[sink] = 0 because no stages are needed to reach the sink itself.
 
