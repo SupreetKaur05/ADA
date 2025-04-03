@@ -256,3 +256,154 @@ SPACE COMPLEXITY= O(n), due to recursive call stack
     h. Return 0 to indicate successful execution.
 
 
+# dijkstra 
+AIM: implement dijkstra algorithm 
+Working
+1. Set the distance to the source node as 0 and all other nodes as infinity.
+   Mark all nodes as unprocessed.   
+2. From the unprocessed nodes, select the node with the smallest tentative distance.
+   This is the node that will be processed next.  
+3. For the selected node, update the distances to its neighboring nodes.
+   If the new calculated distance is smaller than the current distance, update it.  
+4. Once the distances to all adjacent nodes of the current node are updated, mark the current node as processed (it is now part of the shortest path).
+
+6. Repeat the process until all nodes are processed.  
+
+7. The final distance values for each node represent the shortest distance from the source node to that node.  
+
+
+# strassens matrix multiplication
+1. Divide the input matrices A and B into four submatrices each:
+   A = [[A11, A12], [A21, A22]]
+   B = [[B11, B12], [B21, B22]]
+
+2. Compute the following 7 products (using recursive matrix multiplication):
+   P1 = A11 * (B12 - B22)
+   P2 = (A11 + A12) * B22
+   P3 = (A21 + A22) * B11
+   P4 = A22 * (B21 - B11)
+   P5 = (A11 + A22) * (B11 + B22)
+   P6 = (A12 - A22) * (B21 + B22)
+   P7 = (A11 - A21) * (B11 + B12)
+
+3. Compute the final submatrices of the result C:
+   C11 = P5 + P4 - P2 + P6
+   C12 = P1 + P2
+   C21 = P3 + P4
+   C22 = P5 + P1 - P3 - P7
+
+4. Combine the submatrices C11, C12, C21, and C22 to form the final matrix C:
+   C = [[C11, C12], [C21, C22]]
+
+5. If the matrix size is small enough (base case), perform normal matrix multiplication instead of recursion.
+
+6. The time complexity of Strassen’s algorithm is O(n^log2(7)), which is approximately O(n^2.81), making it faster than the standard matrix multiplication algorithm which is O(n^3).
+
+# kruskal's algorithm
+
+1. Sort all the edges in the graph by their weight in non-decreasing order.
+
+2. Initialize a disjoint-set (also called union-find) data structure to keep track of connected components.
+
+3. Iterate through the sorted edge list:
+   - For each edge, check if the two vertices of the edge belong to the same set using the union-find structure.
+   - If they belong to different sets, add this edge to the MST and perform a union operation to combine the sets.
+
+4. Repeat step 3 until you have added (n-1) edges to the MST, where n is the number of vertices.
+
+5. The resulting set of edges forms the Minimum Spanning Tree (MST) of the graph.
+
+6. The time complexity of Kruskal's algorithm is O(E log E), where E is the number of edges in the graph.
+
+# Prim's algorithm
+1. Initialize a set to keep track of the vertices included in the MST.
+
+2. Initialize the key values of all vertices as infinity, except the starting vertex which is set to 0.
+
+3. Add the starting vertex to the MST set.
+
+4. While the MST set doesn't include all vertices:
+   - Find the vertex with the minimum key value that is not yet in the MST set.
+   - Add this vertex to the MST set.
+
+5. For each adjacent vertex of the selected vertex:
+   - If the edge weight is smaller than the current key value of the adjacent vertex, update the key value and the parent of the adjacent vertex.
+
+6. Repeat steps 4 and 5 until all vertices are included in the MST.
+
+7. The resulting edges selected form the Minimum Spanning Tree (MST) of the graph.
+
+8. The time complexity of Prim's algorithm is O(E log V) when using a priority queue, where E is the number of edges and V is the number of vertices.
+
+
+# Knapsack
+
+1. Initialize a 2D array (dp) where dp[i][j] represents the maximum value that can be obtained with the first 'i' items and a weight limit of 'j'.
+
+2. Set the base cases:
+   - For all dp[0][j], the value is 0 (when there are no items).
+   - For all dp[i][0], the value is 0 (when the weight limit is 0).
+
+3. Iterate through all items (from 1 to n) and all weight capacities (from 1 to W):
+   - For each item, check if the weight of the current item is less than or equal to the current capacity.
+   - If it is, consider two options:
+     a. Include the item: The value is the value of the current item plus the value for the remaining capacity after including the item.
+     b. Exclude the item: The value is the same as the value without including the item.
+   - Take the maximum of these two options.
+
+4. Once all items and capacities are considered, the value at dp[n][W] will give the maximum value that can be achieved with the given weight limit.
+
+5. The time complexity of this solution is O(n * W), where n is the number of items and W is the weight capacity of the knapsack.
+
+
+# countstages
+
+1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'. 
+   Set dp[sink] = 0 as no stages are required to reach the sink from itself.
+
+2. Iterate over the nodes in reverse order (from the second last node to the first node):
+   - For each node, check all possible adjacent nodes that can be reached from the current node (based on the adjacency matrix).
+   - If an adjacent node has a valid dp value (i.e., it is reachable and has a minimum stage count), update dp[current_node] to the minimum value of dp[current_node] and dp[adjacent_node] + 1.
+
+3. Continue the process for all nodes until you have computed the minimum number of stages required for each node.
+
+4. The final value dp[source] will give the minimum number of stages required to reach the sink from the source.
+
+5. If dp[source] is still infinity (or a very large value), it means there is no valid path from the source to the sink.
+
+6. The time complexity of this approach is O(n^2), where n is the number of nodes in the graph (since we are checking all possible edges).
+
+# multistage graph
+
+1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'.
+   Set dp[source] = 0 because no stages are needed to reach the source itself.
+
+2. Start iterating from the source node to the sink node (from left to right in the graph):
+   - For each node, check all possible adjacent nodes that can be reached from the current node (based on the adjacency matrix).
+   - If an adjacent node has a valid dp value (i.e., it is reachable), update dp[adjacent_node] to the minimum of dp[adjacent_node] and dp[current_node] + 1.
+
+3. Continue the process until you have computed the minimum number of stages for each node.
+
+4. The final value dp[sink] will give the minimum number of stages required to reach the sink from the source.
+
+5. If dp[sink] is still infinity (or a very large value), it means there is no valid path from the source to the sink.
+
+6. The time complexity of this approach is O(n^2), where n is the number of nodes in the graph (since we are checking all possible edges).
+
+
+# Multistage graph backward
+
+1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'.
+   Set dp[sink] = 0 because no stages are needed to reach the sink itself.
+
+2. Start iterating from the sink node to the source node (from right to left in the graph):
+   - For each node, check all possible adjacent nodes that can be reached from the current node (based on the adjacency matrix).
+   - If an adjacent node has a valid dp value (i.e., it is reachable), update dp[current_node] to the minimum of dp[current_node] and dp[adjacent_node] + 1.
+
+3. Continue the process until you have computed the minimum number of stages for each node.
+
+4. The final value dp[source] will give the minimum number of stages required to reach the sink from the source.
+
+5. If dp[source] is still infinity (or a very large value), it means there is no valid path from the source to the sink.
+
+6. The time complexity of this approach is O(n^2), where n is the number of nodes in the graph (since we are checking all possible edges).
