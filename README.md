@@ -409,6 +409,13 @@ Using an adjacency matrix and a simple array: O(V^2)
 
 Space Complexity: O(V + E)      
 
+OUTPUT:    
+Edge    Weight    
+0 - 1   2
+1 - 2   3
+0 - 3   6
+1 - 4   5    
+
 
 ### 7-03-25
 ## Practical 15
