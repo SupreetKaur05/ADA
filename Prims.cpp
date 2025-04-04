@@ -18,9 +18,9 @@ int minKey(int key[], bool mstSet[]) {
 }
 
 void primMST(int graph[V][V]) {
-    int parent[V];  // Array to store constructed MST
-    int key[V];     // Key values used to pick minimum weight edge in cut
-    bool mstSet[V]; // To represent the set of vertices included in MST
+    int parent[V];  
+    int key[V];     
+    bool mstSet[V]; 
 
     // Initialize all keys as INFINITE
     for (int i = 0; i < V; i++) {
@@ -28,23 +28,15 @@ void primMST(int graph[V][V]) {
         mstSet[i] = false;
     }
 
-    // Always include the first vertex in MST
-    key[0] = 0;     // Make key value of 0th vertex as 0
-    parent[0] = -1; // First node is always the root of MST
+    key[0] = 0;    
+    parent[0] = -1; 
 
-    // The MST will have V vertices
     for (int count = 0; count < V - 1; count++) {
-        // Pick the minimum key vertex from the set of vertices not yet processed
         int u = minKey(key, mstSet);
 
-        // Add the picked vertex to the MST Set
         mstSet[u] = true;
 
-        // Update key and parent index of the adjacent vertices of the picked vertex
         for (int v = 0; v < V; v++) {
-            // graph[u][v] is non-zero only for adjacent vertices of u
-            // mstSet[v] is false for vertices not yet included in MST
-            // Update the key only if graph[u][v] is smaller than key[v]
             if (graph[u][v] && !mstSet[v] && graph[u][v] < key[v]) {
                 key[v] = graph[u][v];
                 parent[v] = u;
@@ -52,7 +44,6 @@ void primMST(int graph[V][V]) {
         }
     }
 
-    // Print the constructed MST
     cout << "Edge \tWeight\n";
     for (int i = 1; i < V; i++) {
         cout << parent[i] << " - " << i << "\t" << graph[i][parent[i]] << endl;
