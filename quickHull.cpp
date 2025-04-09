@@ -1,119 +1,83 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <iostream>
+#include <vector>
+#include <cmath>
+#include <algorithm>
+using namespace std;
 
 struct Point {
     int x, y;
+    bool operator==(const Point& p) const {
+        return x == p.x && y == p.y;
+    }
 };
 
-// Find the side of a point 'p' with respect to the line segment 'a'-'b'
-int findSide(struct Point a, struct Point b, struct Point p) {
+int findSide(Point a, Point b, Point p) {
     int val = (p.y - a.y) * (b.x - a.x) - (p.x - a.x) * (b.y - a.y);
-
-    if (val > 0)
-        return 1;  // Point is on the left side
-    else if (val < 0)
-        return -1; // Point is on the right side
-    else
-        return 0;  // Point is collinear
+    if (val > 0) return 1;
+    if (val < 0) return -1;
+    return 0;
 }
 
-// Returns a value proportional to the distance between the point p and the line joining the points a and b
-int lineDist(struct Point a, struct Point b, struct Point p) {
+int lineDist(Point a, Point b, Point p) {
     return abs((p.y - a.y) * (b.x - a.x) - (p.x - a.x) * (b.y - a.y));
 }
 
-// Recursive function to find the points on the convex hull
-void quickHull(struct Point points[], int numPoints, struct Point a, struct Point b, int side, struct Point hull[], int* hullSize) {
+void quickHull(vector<Point>& points, Point a, Point b, int side, vector<Point>& hull) {
+    int index = -1;
     int maxDist = 0;
-    int maxDistIndex = -1;
 
-    // Find the point with the maximum distance from the line segment 'a'-'b' and also on the specified side of L
-    for (int i = 0; i < numPoints; i++) {
-        int currSide = findSide(a, b, points[i]);
-        int dist = lineDist(a, b, points[i]);
-        if (currSide == side && dist > maxDist) { // side can have value 1 or -1 specifying each of the parts made by the line L
-            maxDist = dist;
-            maxDistIndex = i;
+    for (int i = 0; i < points.size(); i++) {
+        int temp = lineDist(a, b, points[i]);
+        if (findSide(a, b, points[i]) == side && temp > maxDist) {
+            index = i;
+            maxDist = temp;
         }
     }
-    // If no point is found, add the end points of the line segment to the convex hull
-    if (maxDistIndex == -1) {
-        // Check if a and b already exist in the hull
-        int aExists = 0, bExists = 0;
-        for (int i = 0; i < *hullSize; i++) {
-            if (hull[i].x == a.x && hull[i].y == a.y) {
-                aExists = 1;
-            }
-            if (hull[i].x == b.x && hull[i].y == b.y) {
-                bExists = 1;
-            }
-        }
 
-        // Add a and b only if they don't already exist
-        if (!aExists) {
-            hull[*hullSize] = a;
-            (*hullSize)++;
-        }
-        if (!bExists) {
-            hull[*hullSize] = b;
-            (*hullSize)++;
-        }
+    if (index == -1) {
+        if (find(hull.begin(), hull.end(), a) == hull.end()) hull.push_back(a);
+        if (find(hull.begin(), hull.end(), b) == hull.end()) hull.push_back(b);
         return;
     }
 
-    // Recursively find the points on the convex hull on the two sides of the line segment divided by points[maxDistIndex]
-    quickHull(points, numPoints, points[maxDistIndex], a, -findSide(points[maxDistIndex], a, b), hull, hullSize);
-    quickHull(points, numPoints, points[maxDistIndex], b, -findSide(points[maxDistIndex], b, a), hull, hullSize);
+    quickHull(points, points[index], a, -findSide(points[index], a, b), hull);
+    quickHull(points, points[index], b, -findSide(points[index], b, a), hull);
 }
 
-// Wrapper function to compute the convex hull using QuickHull algorithm
-void computeConvexHull(struct Point points[], int numPoints, struct Point hull[], int* hullSize) {
-    // Find the leftmost and rightmost points
-    int minPoint = 0, maxPoint = 0;
-    for (int i = 1; i < numPoints; i++) {
-        if (points[i].x < points[minPoint].x)
-            minPoint = i;
-        if (points[i].x > points[maxPoint].x)
-            maxPoint = i;
+void computeConvexHull(vector<Point>& points) {
+    int n = points.size();
+    if (n < 3) {
+        cout << "Convex hull not possible\n";
+        return;
     }
 
-    // Compute the points on one side of the line segment 'minPoint'-'maxPoint'
-    quickHull(points, numPoints, points[minPoint], points[maxPoint], 1, hull, hullSize);
+    int min_x = 0, max_x = 0;
+    for (int i = 1; i < n; i++) {
+        if (points[i].x < points[min_x].x) min_x = i;
+        if (points[i].x > points[max_x].x) max_x = i;
+    }
 
-    // Compute the points on the other side of the line segment 'minPoint'-'maxPoint'
-    quickHull(points, numPoints, points[minPoint], points[maxPoint], -1, hull, hullSize);
+    vector<Point> hull;
+    quickHull(points, points[min_x], points[max_x], 1, hull);
+    quickHull(points, points[min_x], points[max_x], -1, hull);
+
+    cout << "\nPoints on the Convex Hull:\n";
+    for (auto& p : hull) {
+        cout << "(" << p.x << ", " << p.y << ")\n";
+    }
 }
 
 int main() {
-    // Create an array of points
-    struct Point points[] = {
-        {0, 3},
-        {1, 1},
-        {2, 2},
-        {4, 4},
-        {0, 0},
-        {1, 2},
-        {3, 1},
-        {3, 3}
-    };
-    int numPoints = sizeof(points) / sizeof(points[0]);
+    int n;
+    cout << "Enter number of points: ";
+    cin >> n;
 
-    // numPoints should be >= 3 to make a triangle
-    if (numPoints < 3) {
-        printf("Convex hull not possible\n");
-        return 0;
+    vector<Point> points(n);
+    cout << "Enter the points (x y):\n";
+    for (int i = 0; i < n; i++) {
+        cin >> points[i].x >> points[i].y;
     }
 
-    // Compute the convex hull
-    struct Point* hull = malloc(numPoints * sizeof(struct Point));
-    int hullSize = 0;
-    computeConvexHull(points, numPoints, hull, &hullSize);
-
-    // Print the points on the convex hull
-    printf("Points on the convex hull:\n");
-    for (int i = 0; i < hullSize; i++) {
-        printf("(%d, %d)\n", hull[i].x, hull[i].y);
-    }
-
+    computeConvexHull(points);
     return 0;
 }
