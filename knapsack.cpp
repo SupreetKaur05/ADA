@@ -1,6 +1,6 @@
 #include<iostream>
-#include <cstdlib> // For rand()
-#include <ctime>   // For seeding rand()
+#include <cstdlib> 
+#include <ctime>   
 using namespace std;
 void profit_sorting(float profit[],float weight[],int size,int cap){
 	for(int j=0;j<size-1;j++){
