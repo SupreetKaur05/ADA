@@ -168,40 +168,32 @@ Working:
 
 OUTPUT:     
 
-Enter size of knapsack = 8   
-Enter capacity=6    
+Enter number of items: 5         
+Enter knapsack capacity: 100         
 
-Enter weight of 0 index is=50       
-Enter profit of 0 index is=35         
-Enter weight of 1 index is=37         
-Enter profit of 1 index is=0            
-Enter weight of 2 index is=11         
-Enter profit of 2 index is=56         
-Enter weight of 3 index is=11         
-Enter profit of 3 index is=12         
-Enter weight of 4 index is=39         
-Enter profit of 4 index is=53         
-Enter weight of 5 index is=4    
-Enter profit of 5 index is=9        
-Enter weight of 6 index is=32    
-Enter profit of 6 index is=18     
-Enter weight of 7 index is=0    
-Enter profit of 7 index is=26     
-Profit is    56 53 35 26 18 12 9 0     
-Weight is    11 39 50 0 32 11 4 37    
+Generating Random Weights and Profits:        
+Item 1 - Weight: 41, Profit: 97           
+Item 2 - Weight: 53, Profit: 14         
+Item 3 - Weight: 36, Profit: 71            
+Item 4 - Weight: 62, Profit: 60       
+Item 5 - Weight: 10, Profit: 56       
 
-Maximum profit is 56.5455    
+Sorting by Profit:         
+Profits: 97 71 60 56 14        
+Weights: 41 36 62 10 53          
+Maximum Profit (Profit Sort): 205.47        
 
-Profit is    35 53 0 18 12 56 9 26     
-Weight is    50 39 37 32 11 11 4 0    
+Sorting by Weight:   
+Profits: 60 14 97 71 56    
+Weights: 62 53 41 36 10    
+Maximum Profit (Weight Sort): 174.33          
 
-Maximum profit is 4.2    
-ratio is    inf 5.09091 2.25 1.35897 1.09091 0.7 0.5625 0             
-Profit is    26 56 9 53 12 35 18 0           
-weight is    0 11 4 39 11 50 32 37        
+Sorting by Profit/Weight Ratio:    
+Ratios : 5.60 2.37 2.02 1.94 0.26    
+Profits: 56 71 97 60 14    
+Weights: 10 36 41 62 53     
+Maximum Profit (Ratio Sort): 211.22   
 
-Maximum profit is 56.5455         
- 
   
 Time Complexity: O(nlogn)   
 Space Complexity: O(n)   
