@@ -396,8 +396,15 @@ Working:
    If the new calculated distance is smaller than the current distance, update it.    
 4. Once the distances to all adjacent nodes of the current node are updated, mark the current node as processed (it is now part of the shortest path).    
 6. Repeat the process until all nodes are processed.    
-7. The final distance values for each node represent the shortest distance from the source node to that node.     
-         
+7. The final distance values for each node represent the shortest distance from the source node to that node.
+
+OUTPUT:   
+Vertex 0 distance from source: 0     
+Vertex 1 distance from source: 10    
+Vertex 2 distance from source: 15      
+Vertex 3 distance from source: 17       
+
+
 Time Complexity:          
 - Using an adjacency matrix and a simple array: O(V^2)       
 - Using an adjacency list and a binary heap (priority queue): O((V + E) log V)        
