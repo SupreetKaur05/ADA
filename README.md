@@ -356,8 +356,27 @@ Working:
     g. Print the points that are part of the convex hull.
     h. Return 0 to indicate successful execution.
 
- Time Complexity:         
- Worst Case: O(n^2)   
+
+OUTPUT:
+Enter number of points: 8   
+Enter the points (x y):  
+0 3   
+1 1         
+2 2          
+4 4     
+0 0      
+1 2         
+3 1        
+3 3      
+Points on the Convex Hull:   
+(0, 3)  
+(4, 4)   
+(0, 0)    
+(3, 1)    
+
+
+Time Complexity:         
+Worst Case: O(n^2)   
 Average Case: O(n log n)   
 
 Space Complexity:   
