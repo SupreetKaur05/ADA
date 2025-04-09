@@ -220,7 +220,11 @@ Working:
     * Call the binary search function with the array, target, and the initial search range (from index 0 to the last index).
     * Check the return value from the search.
     * If the result is -1, print "Not found".
-    * Otherwise, print "Element is found at index" followed by the returned index.          
+    * Otherwise, print "Element is found at index" followed by the returned index.
+
+OUTPUT:
+Element is found at index 1      
+
 
 Time Complexity: O(log n)        
 Space Complexity: O(1) (iterative) or O(log n) (recursive)    
