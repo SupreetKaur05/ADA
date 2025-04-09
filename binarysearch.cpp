@@ -3,7 +3,6 @@ using namespace std;
 
 int binarySearch(int array[], int x, int low, int high) {
   
-	// Repeat until the pointers low and high meet each other
   while (low <= high) {
     int mid = low + (high - low) / 2;
 
