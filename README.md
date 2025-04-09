@@ -250,6 +250,25 @@ Working:
 8. Set up a list of example activities.
 9. Run the selection process with the example activities.
 
+OUTPUT:
+
+Enter number of activities: 5     
+Enter start and end time for each activity:   
+Activity 1 - Start: 1   
+Activity 1 - End: 2  
+Activity 2 - Start: 3      
+Activity 2 - End: 4       
+Activity 3 - Start: 0       
+Activity 3 - End: 6       
+Activity 4 - Start: 5        
+Activity 4 - End: 7       
+Activity 5 - Start: 8     
+Activity 5 - End: 9       
+
+The activities selected in the following order:   
+{1,2} {3,4} {5,7} {8,9}    
+
+
 Time Complexity:          
 - Sorting the activities takes O(n log n) time.     
 - Selecting the activities takes O(n) time.          
