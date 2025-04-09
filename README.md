@@ -14,9 +14,9 @@ WORKING :
 9. print the answer.  
 
   
-OUTPUT :  
-{4,54,17,9,82,45,80}; 
-The Peak is:54    
+OUTPUT :         
+{4,54,17,9,82,45,80};     
+The Peak is:54           
 
 
 TIME COMPLEXITY =O(logn)  
