@@ -303,6 +303,17 @@ Working:
     c. Print the element at z[i][j] followed by a space.
 9. End the program.       
 
+OUTPUT:       
+The first matrix is:    
+12 34       
+22 10        
+The second matrix is:         
+3 4      
+2 1        
+Product achieved using Strassen's algorithm:       
+104 82     
+86 98   
+
 Time Complexity: O(n^log7) ≈ O(n^2.81), which is more efficient than the standard approach.      
 Space Complexity: O(n^2), but requires additional space for intermediate matrices.        
 
