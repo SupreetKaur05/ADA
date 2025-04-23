@@ -447,7 +447,21 @@ Working:
 4. Combine the submatrices C11, C12, C21, and C22 to form the final matrix C:
    C = [[C11, C12], [C21, C22]]
 
-5. If the matrix size is small enough (base case), perform normal matrix multiplication instead of recursion.            
+5. If the matrix size is small enough (base case), perform normal matrix multiplication instead of recursion.
+
+OUTPUT:    
+Enter the size of the matrix (power of 2): 2   
+Enter elements of Matrix A:     
+1 2    
+3 4     
+Enter elements of Matrix B:   
+5 6    
+7 8     
+Resulting Matrix C:     
+19 22     
+43 50     
+
+
 
 Time Complexity: O(n^log2(7)) ≈ O(n^2.81)       
 
