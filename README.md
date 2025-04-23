@@ -582,6 +582,14 @@ Working:
 
 5. If dp[source] is still infinity (or a very large value), it means there is no valid path from the source to the sink.            
 
+OUTPUT:   
+Enter the number of nodes: 4  
+Enter the adjacency matrix:     
+0 1 1 0   
+0 0 0 1   
+0 0 0 1  
+0 0 0 0  
+Number of stages: 2   
 
 Time Complexity: O(V + E), where V is the number of vertices and E is the number of edges.           
 Space Complexity: O(V + E)            
