@@ -486,6 +486,13 @@ Working:
 
 5. The resulting set of edges forms the Minimum Spanning Tree (MST) of the graph.
 
+OUTPUT:
+Edge  	Weight   
+2   -   3  	4   
+0   -   3 	5  
+0   -   1 	10   
+
+
 Time Complexity: O(E log E) or O(E log V), where E is the number of edges and V is the number of vertices.          
 
 Space Complexity: O(V + E)           
