@@ -699,3 +699,36 @@ Time Complexity: O(m * n)
 
 Space Complexity: O(m * n)    
 
+### 4-04-25     
+## Practical 22     
+Aim: N Queens   
+Working:     
+1.Define the Board Representation:  
+The board is represented using a 1D array (or pointer) board[] where each element at index i represents the column position of the queen placed in row i. The array size is n (the size of the chessboard).        
+2.Place Queens Using Backtracking:        
+For each row, the algorithm tries to place a queen in each column. If placing a queen is valid (it doesn’t conflict with any previous queen), the program proceeds to the next row.             
+If all rows are filled (i.e., n queens are placed), the solution is printed.             
+If placing a queen leads to an invalid configuration (i.e., queens attacking each other), the algorithm backtracks and tries a new position.           
+3.Check Valid Placement:        
+A queen can be placed in a particular position if:         
+No other queen exists in the same column.         
+No other queen exists in the diagonals (both main and anti-diagonal).      
+5.Pointer Usage:       
+In the implementation, we use a pointer to represent the board[] (or a dynamically allocated array). The pointer helps manage the board dynamically, and it allows us to easily pass it to functions without making a copy of the array.         
+
+OUTPUT:
+Enter n: 5  
+1 3 5 2 4         
+1 4 2 5 3          
+2 4 1 3 5           
+2 5 3 1 4           
+3 1 4 2 5         
+3 5 2 4 1            
+4 1 3 5 2            
+4 2 5 3 1           
+5 2 4 1 3           
+5 3 1 4 2          
+Time Complexity: O(N!)      
+
+Space Complexity: O(N)   
+
