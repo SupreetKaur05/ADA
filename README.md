@@ -282,40 +282,32 @@ Space Complexity:
 
 ### 14-02-25
 ## Practical 9         
-Aim: Matix multiplication          
+Aim: Matix multiplication by D&C            
 Working:        
-1. Declare three 2x2 integer matrices: z (for the result), x (first input), and y (second input).
-2. Declare integer variables i and j for loop counters, and m1 through m7 for intermediate calculations.
-3. Initialize the input matrices x and y with specific values.
-4. Print the first matrix (x) to the console.
-    a. Loop through each row (i).
-    b. Loop through each column (j) within the row.
-    c. Print the element at x[i][j] followed by a space.
-5. Print the second matrix (y) to the console.
-    a. Loop through each row (i).
-    b. Loop through each column (j) within the row.
-    c. Print the element at y[i][j] followed by a space.
-6. Calculate the seven intermediate values (m1 through m7) using the Strassen's algorithm formulas.
-7. Calculate the elements of the result matrix z using the intermediate values (m1 through m7).
-8. Print the product matrix (z) to the console, which is the result of the Strassen's matrix multiplication.
-    a. Loop through each row (i).
-    b. Loop through each column (j) within the row.
-    c. Print the element at z[i][j] followed by a space.
-9. End the program.       
+1. The program multiplies two square matrices using the divide and conquer method in C++.       
+2.It asks the user to input the size of the matrices, which must be a power of 2.          
+3.The user is then prompted to enter the elements of Matrix A.         
+4.The user is prompted again to enter the elements of Matrix B.        
+5.The program recursively divides both matrices into four equal-sized submatrices.           
+6.It multiplies and adds the corresponding submatrices using divide and conquer logic.         
+7.The four resulting submatrices are combined into a final product matrix.            
+8.The program outputs the resulting product matrix to the console.           
+9.All input and output are handled through standard console interactions.           
 
-OUTPUT:       
-The first matrix is:    
-12 34       
-22 10        
-The second matrix is:         
-3 4      
-2 1        
-Product achieved using Strassen's algorithm:       
-104 82     
-86 98   
+OUTPUT:                 
+Enter matrix size (power of 2): 2 
+Enter elements of Matrix A:  
+1 2  
+3 4  
+Enter elements of Matrix B:  
+5 6   
+7 8    
+Product matrix is:   
+19 22     
+43 50      
 
-Time Complexity: O(n^log7) ≈ O(n^2.81), which is more efficient than the standard approach.      
-Space Complexity: O(n^2), but requires additional space for intermediate matrices.        
+Time Complexity: O(n^3)          
+Space Complexity: O(n^2).            
 
 
 
