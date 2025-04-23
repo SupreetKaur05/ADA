@@ -652,4 +652,31 @@ Number of stages from source to sink: 2
 
 Time Complexity: O(n^2), where n is the number of nodes in the graph (since we are checking all possible edges)         
 
-Space Complexity: O(V), for storing the dynamic programming table or the shortest path values for each vertex.   
+Space Complexity: O(V), for storing the dynamic programming table or the shortest path values for each vertex. 
+
+
+### 28-03-25     
+## Practical 20   
+Aim: Travelling salesperson                 
+Working:     
+1. Define the number of cities N and the distance matrix dist[N][N] representing the cost between each pair of cities.       
+2.Use a 2D vector dp of size (1 << N) x N initialized with -1, where each state dp[mask][pos] stores the minimum cost to reach the subset of visited cities  
+represented by mask ending at city pos.    
+3.Implement a recursive function tsp(mask, pos):   
+If mask has all cities visited (mask == (1 << N) - 1), return the cost to go back to the starting city.          
+If the value is already computed in dp[mask][pos], return it to avoid recomputation (memoization).          
+4.Initialize ans with infinity.             
+5.Loop through each city:         
+If the city has not been visited in the current mask, recursively compute the cost of visiting it and update ans with the minimum.         
+Store the computed minimum cost for the current state in dp[mask][pos].        
+6.In main():            
+Call tsp(1, 0) where 1 represents that the starting city (city 0) is visited.          
+Print the final result.         
+
+OUTPUT:      
+The minimum cost is 80     
+
+Time Complexity: O(n^2 * 2^n)       
+Space Complexity: O(n * 2^n)   
+
+
