@@ -422,7 +422,7 @@ Space Complexity: O(V + E) (to store the graph, the distance array, and the prio
 
 
 ### 21-02-25
-## Practical 12
+## Practical 13  
 Aim: Strassens matrix multiplication         
 Working:            
 1. Divide the input matrices A and B into four submatrices each:
@@ -457,7 +457,7 @@ Space Complexity: O(n^2)
 
 
 ### 28-02-25
-## Practical 13
+## Practical 14   
 Aim: Kruskal's algorithm        
 Working:         
 1. Sort all the edges in the graph by their weight in non-decreasing order.
@@ -478,7 +478,7 @@ Space Complexity: O(V + E)
 
 
 ### 28-02-25
-## Practical 14
+## Practical 15   
 Aim: Prim's algorithm         
 Working:          
 1. Initialize a set to keep track of the vertices included in the MST.
@@ -516,7 +516,7 @@ Edge    Weight
 
 
 ### 7-03-25
-## Practical 15
+## Practical 16   
 Aim:  Knapsack 01   
 Working:      
 1. Initialize a 2D array (dp) where dp[i][j] represents the maximum value that can be obtained with the first 'i' items and a weight limit of 'j'.
@@ -542,7 +542,7 @@ Space Complexity: O(n * W)
 
 
  ### 21-03-25
-## Practical 16
+## Practical 17   
 Aim:  Countstages       
 Working:        
 1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'. 
@@ -564,7 +564,7 @@ Space Complexity: O(V + E)
 
 
 ### 21-03-25
-## Practical 17
+## Practical 18   
 Aim:  Multistage graph(forward approach)     
 Working:      
 1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'.
@@ -586,7 +586,7 @@ Space Complexity: O(V)
 
 
 ### 21-03-25   
-## Practical 18   
+## Practical 19    
 Aim:  Multistage graph(backward approach)               
 Working:   
 1. Initialize a DP array where dp[i] represents the minimum number of stages required to reach the sink from node 'i'.
