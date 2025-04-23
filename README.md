@@ -680,3 +680,22 @@ Time Complexity: O(n^2 * 2^n)
 Space Complexity: O(n * 2^n)   
 
 
+### 28-03-25     
+## Practical 21     
+Aim: Longest Subsequence                  
+Working:     
+1.Define two input strings s1 and s2.     
+2.Create a 2D vector dp of size (m+1) x (n+1) initialized to 0, where m and n are the lengths of s1 and s2.  
+3.Use nested loops to fill the dp table:   
+If characters s1[i-1] and s2[j-1] match, set dp[i][j] = dp[i-1][j-1] + 1.      
+If not, set dp[i][j] = max(dp[i-1][j], dp[i][j-1]).      
+4.After completing the table, the value at dp[m][n] holds the length of the Longest Common Subsequence.   
+5.Print the value dp[m][n].    
+
+OUTPUT:
+4   
+
+Time Complexity: O(m * n)   
+
+Space Complexity: O(m * n)    
+
