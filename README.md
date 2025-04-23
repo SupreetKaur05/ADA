@@ -557,6 +557,9 @@ Working:
 
 5. The time complexity of this solution is O(n * W), where n is the number of items and W is the weight capacity of the knapsack.        
 
+OUTPUT:   
+Maximum value in Knapsack = 220   
+
 
 Time Complexity: O(n * W), where n is the number of items and W is the maximum weight capacity of the knapsack.       
 Space Complexity: O(n * W)        
