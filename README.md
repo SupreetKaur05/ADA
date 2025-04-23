@@ -370,14 +370,30 @@ Points on the Convex Hull:
 Time Complexity:         
 Worst Case: O(n^2)   
 Average Case: O(n log n)   
-
-Space Complexity:   
-- O(n), for storing the points and the convex hull.     
+Space Complexity:- O(n), for storing the points and the convex hull.         
 
 
+### 14-02-25
+## Practical 11               
+Aim: Iterative QS            
+Working:   
+Implements the QuickSort algorithm in an iterative manner using a stack.     
+Avoids recursion by using a stack to manage subarray boundaries.       
+Partitions the array using the last element as the pivot.       
+Continuously processes smaller subarrays until the stack is empty.       
 
+OUTPUT:    
+Original array: 10 7 8 9 1 5    
+Sorted array: 1 5 7 8 9 10     
+
+Time Complexity:      
+Average Case: 𝑂(𝑛log⁡𝑛)      
+Worst Case: 𝑂(𝑛^2)   
+Space Complexity:O(n)   
+
+ 
 ### 21-02-25
-## Practical 11    
+## Practical 12      
 Aim: Dijkstra Algorithm    
 Working:         
 1. Set the distance to the source node as 0 and all other nodes as infinity.   
