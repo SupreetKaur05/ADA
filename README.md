@@ -610,7 +610,11 @@ Working:
 
 4. The final value dp[sink] will give the minimum number of stages required to reach the sink from the source.
 
-5. If dp[sink] is still infinity (or a very large value), it means there is no valid path from the source to the sink.        
+5. If dp[sink] is still infinity (or a very large value), it means there is no valid path from the source to the sink.
+
+OUTPUT:       
+Minimum cost to reach destination: 40      
+
 
 Time Complexity: O(V + E)    
 Space Complexity: O(V)   
