@@ -1,8 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 bool flag = 0;
-
 void PrintSubsetSum(int i, int n, int set[], int targetSum, vector<int>& subset) {
     if (targetSum == 0) {
         flag = 1;
@@ -19,7 +17,6 @@ void PrintSubsetSum(int i, int n, int set[], int targetSum, vector<int>& subset)
         subset.pop_back();
     }
 }
-
 int main() {
     int n, sum;
     cout << "Enter number of elements: ";
