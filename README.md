@@ -732,3 +732,37 @@ Time Complexity: O(N!)
 
 Space Complexity: O(N)   
 
+
+### 11-04-25       
+## Practical 23       
+Aim: M Coloring   
+Working:     
+1.First, the number of vertices V and the number of edges E.           
+Then, E pairs of integers representing the edges between vertices (using 0-based indexing for vertices).            
+Finally, the number of colors m available for coloring.              
+2.After receiving the input, the program constructs an adjacency list representation of the graph. It then attempts to assign one of the m colors to each vertex such that no two connected vertices share the same color. This is done using a recursive function that generates all possible color combinations and checks their validity.             
+3.The program outputs:     
+true if a valid coloring is possible using at most m colors.       
+false if no valid coloring exists for the given graph with m colors.        
+
+OUTPUT:      
+Enter number of vertices: 4        
+Enter number of edges: 4           
+Enter edges (u v pairs, 0-based index):         
+0 1   
+0 2   
+1 3  
+2 3   
+Enter number of colors: 3         
+true  
+
+
+Time Complexity : O(m^V×(V + E))           
+Space Complexity :O(V + E)               
+
+
+
+### 11-04-25       
+## Practical 24      
+Aim: Sum of subsets   
+Working:     
