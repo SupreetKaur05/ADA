@@ -766,3 +766,18 @@ Space Complexity :O(V + E)
 ## Practical 24      
 Aim: Sum of subsets   
 Working:     
+1.Input: The user provides the number of elements, the set of integers, and the target sum      
+2.Recursive Backtracking: The program recursively explores all subsets of the set by either including or excluding each element.        
+3.Base Case: If the target sum becomes 0, it prints the current subset. If the recursion ends and no subset matches, it prints "There is no such subset."          
+4.Output: The program prints all subsets whose sum equals the target value. If no valid subset exists, it prints a message saying no such subset exists.         
+
+OUTPUT:      
+Enter number of elements: 3       
+Enter elements: 1 2 1         
+Enter target sum: 3      
+Subsets with sum 3: [ 1 2 ] [ 2 1 ]        
+
+ Time Complexity: O(2^n)   
+ Space Complexity: O(n)   
+
+
